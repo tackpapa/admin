@@ -3,10 +3,10 @@ import React, { Fragment, useEffect, useState } from "react";
 import {  useDispatch, useSelector } from "react-redux";
 import banneractions from "../store/banner/banneractions";
 import { RootState } from "../store/types";
-
 import "./Home.css";
 import { trimText } from '../utils/util';
 import configactions from "../store/config/configactions";
+import { useHistory, useLocation } from "react-router-dom";
 
 const bannerSelector = ({banner} : RootState) => banner;
 const Home = ()=>{
@@ -19,7 +19,7 @@ const Home = ()=>{
   const dispatch = useDispatch()
   
   const banner = useSelector(bannerSelector);
-
+const history = useHistory();
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const newBanner = {
@@ -34,9 +34,9 @@ const Home = ()=>{
     dispatch(banneractions.getBanner.request()); 
 }, [dispatch])
 
-// useEffect(() => {
-//   console.log(newBanner)
-// }, [newBanner])
+useEffect(() => {
+  history.push(history.location.pathname)
+}, [history])
 
 const delbanner = (id:string)=>{
   dispatch(banneractions.deleteBanner.request(id));
@@ -60,6 +60,7 @@ const delbanner = (id:string)=>{
   }
   const handlepic = (e:any)=>{
     setPic(e.target.files[0])
+    console.log(pic)
   }
   const handlecreate = ()=>{
     dispatch(banneractions.makeBanner.request(newBanner));   
@@ -89,7 +90,7 @@ const delbanner = (id:string)=>{
 </div>
       
      <div className="bg-gray-500 flex-column" >
-       <div className="grid gap-4">
+       <div className="grid grid-cols-2 gap-4 ml-72">
 
   <div className="gap-4 my-10">
 
@@ -149,6 +150,10 @@ const delbanner = (id:string)=>{
                   </div>
                   <p className="text-xs text-gray-500">
                    배너 288 *144 **엄수**
+                   
+                  </p>
+                  <p className="text-m text-blue-700">                 
+                   {pic ? pic.name : null}
                   </p>
                 </div>
               </div>
@@ -164,6 +169,7 @@ const delbanner = (id:string)=>{
     </div>
   </div>
   </div>
+  <table>
   {banner.data.map((item, i) => {
       if (!item) return null
       return (<Fragment key={`${item._id}`}> 
@@ -216,6 +222,7 @@ const delbanner = (id:string)=>{
                 </Fragment>)})
       }
 
+</table>
      </div>
      </div>
     );

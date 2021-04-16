@@ -37,7 +37,7 @@ const num = new Array(pa).fill(0)
 
   <div className="flex flex-row justify-center">
   {num.map((_, i) => (
-  <div className="text-m text-green-600 mx-5 my-2">
+  <div className="text-m text-green-600 mx-5 my-2" key={`marketPage-pagination-number-${i}`}>
     <button onClick={()=> move(i+1)} >{i+1}</button>
   </div>
 ))}

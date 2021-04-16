@@ -37,7 +37,7 @@ const num = new Array(pa).fill(0)
     <div>
   <div className="flex flex-row justify-center">
   {num.map((_, i) => (
-  <div className="text-m text-green-600 mx-5 my-2">
+  <div className="text-m text-green-600 mx-5 my-2" key={`postPage-pagination-number-${i}`}>
     <button onClick={()=> move(i+1)} >{i+1}</button>
   </div>
 ))}
@@ -108,7 +108,7 @@ const num = new Array(pa).fill(0)
                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                      {item.context}
                      { item.pics?.map((uri, i) =>
-                                              (   <img key={`${i}`} className = "h-100 w-100" alt="" src={uri}/> )                       
+                                              (   <img key={`postPage-item-pic-${item._id}-${uri}-${i}`} className = "h-100 w-100" alt="" src={uri}/> )                       
                                            )}   
                    </td>
                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
