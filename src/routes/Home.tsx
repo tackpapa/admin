@@ -6,7 +6,7 @@ import { RootState } from "../store/types";
 import "./Home.css";
 import { trimText } from '../utils/util';
 import configactions from "../store/config/configactions";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const bannerSelector = ({banner} : RootState) => banner;
 const Home = ()=>{
