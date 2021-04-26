@@ -6,16 +6,25 @@ import useractions from "../store/user/useractions";
 import { useDispatch } from "react-redux";
 
 const {Kakao} = window as any
+let add = ""
+
+if (process.env.NODE_ENV === "development") {
+   add = "http://localhost:3001/admin";
+} else {
+    add = "http://byker.s3-website.ap-northeast-2.amazonaws.com/admin";
+}
 
 function loginWithKakao() {
   Kakao.Auth.logout(function() {
     Kakao.Auth.authorize({
       throughTalk: false,
-  redirectUri: 'http://localhost:3001/admin'
+  redirectUri: add
   })
     });
   
 }
+
+
 
 const Home= ()=>{
   const [code,setCode] = React.useState('');
@@ -36,7 +45,7 @@ const Home= ()=>{
 
   React.useEffect(() => {
     if (code) {
-        dispatch(useractions.fetchSignIn.request({ code, uri:'http://localhost:3001/admin' }));
+        dispatch(useractions.fetchSignIn.request({ code, uri:add }));
         <Redirect to="/home" />
     }
 }, [code, dispatch])   
