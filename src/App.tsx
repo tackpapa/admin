@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 import Home from "./routes/Home";
 import Login from "./routes/Login";
 import User from "./routes/User";
-
 import Postpag from "./routes/Postpag";
 import Jobpag from "./routes/Jobpag";
 import Marketpag from "./routes/Marketpag";
@@ -23,14 +22,10 @@ const Admin = () => {
       {(user && user.level > 5) ? <>
         <Navigation />
         <Switch>       
-          <Route path="/admin/" exact={true} component={Home} /> 
-     
-          <Route path="/admin/user" exact={true} component={User} />
-         
-          <Route path="/admin/postpag" exact={true} component={Postpag} />
-        
-          <Route path="/admin/jobpag" exact={true} component={Jobpag} />
-         
+          <Route path="/admin/" exact={true} component={Home} />  
+          <Route path="/admin/user" exact={true} component={User} />     
+          <Route path="/admin/postpag" exact={true} component={Postpag} /> 
+          <Route path="/admin/jobpag" exact={true} component={Jobpag} />   
           <Route path="/admin/marketpag" exact={true} component={Marketpag} />      
           <Redirect to="/admin/" />
         </Switch>
