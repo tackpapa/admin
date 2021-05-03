@@ -21,6 +21,12 @@ const user = createReducer<UserState>(initialState, {
       liked: [...state.liked, payload],
     };
   },
+  [getType(userActions.searchUser.success)]: (state, { payload }) => {
+    return {
+      ...state,
+      result: payload,
+    };
+  },
   [getType(userActions.getOne.success)]: (state, { payload }) => {
     return payload;
   },
@@ -39,6 +45,12 @@ const user = createReducer<UserState>(initialState, {
     return {
       ...state,
       ...payload,
+    };
+  },
+  [getType(userActions.deleteResult.request)]: (state) => {
+    return {
+      ...state,
+      result: [],
     };
   },
   [getType(userActions.deleteNoti.success)]: (state, { payload }) => {

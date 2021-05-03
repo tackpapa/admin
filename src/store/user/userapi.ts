@@ -19,6 +19,8 @@ import {
   UploadProfileSuccessPayload,
   UserProfileSuccessPayload,
   UserProfileRequestPayload,
+  SearchUserRequestPayload,
+  SearchUserSuccessPayload,
 } from "./usertypes";
 
 export const requestFetchSignIn = (payload: SignInRequestPayload) => {
@@ -42,6 +44,11 @@ export const requestGETONE = (payload: GetOneRequestPayload) =>
   request
     .get(`/user/${payload}`)
     .then<GetOneSuccessPayload>(({ data }) => data);
+
+export const requestSearchUser = (payload: SearchUserRequestPayload) =>
+  request
+    .get(`/user/search/${payload}`)
+    .then<SearchUserSuccessPayload>(({ data }) => data);
 
 export const requestDeleteNoti = (payload: DeleteNotiRequestPayload) => {
   return request

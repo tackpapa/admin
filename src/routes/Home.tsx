@@ -51,7 +51,6 @@ const delbanner = (id:string)=>{
   }
 
   const handlemsg = (e:any)=>{
-    console.log(e.target.value)
     setMsg(e.target.value)
   }
 
@@ -60,7 +59,7 @@ const delbanner = (id:string)=>{
   }
   const handlepic = (e:any)=>{
     setPic(e.target.files[0])
-    console.log(pic)
+    
   }
   const handlecreate = ()=>{
     dispatch(banneractions.makeBanner.request(newBanner));   

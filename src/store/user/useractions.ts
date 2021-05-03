@@ -21,6 +21,10 @@ import {
   UserProfileRequestPayload,
   UserProfileSuccessPayload,
   AllUserSuccessPayload,
+  SearchUserRequestPayload,
+  SearchUserSuccessPayload,
+  DeleteResultRequestPayload,
+  DeleteResultSuccessPayload,
 } from "./usertypes";
 
 const logout = createAction(Actions.SIGN_OUT)<void>();
@@ -44,6 +48,13 @@ const deleteNoti = createAsyncAction(
   Actions.DELETE_NOTI_SUCCESS,
   Actions.DELETE_NOTI_FAILURE
 )<DeleteNotiRequestPayload, DeleteNotiSuccessPayload>();
+
+const searchUser = createAsyncAction(
+  Actions.SEARCH_USER_REQUEST,
+  Actions.SEARCH_USER_SUCCESS,
+  Actions.SEARCH_USER_FAILURE,
+  Actions.SEARCH_USER_CANCEL
+)<SearchUserRequestPayload, SearchUserSuccessPayload, undefined, undefined>();
 
 const getOne = createAsyncAction(
   Actions.GETONE_IN_REQUEST,
@@ -72,6 +83,18 @@ const fetchDelete = createAsyncAction(
   Actions.DELETE_IN_FAILURE,
   Actions.DELETE_IN_CANCEL
 )<DeleteRequestPayload, DeleteSuccessPayload, undefined, undefined>();
+
+const deleteResult = createAsyncAction(
+  Actions.DELETERESULT_REQUEST,
+  Actions.DELETERESULT_SUCCESS,
+  Actions.DELETERESULT_FAILURE,
+  Actions.DELETERESULT_CANCEL
+)<
+  DeleteResultRequestPayload,
+  DeleteResultSuccessPayload,
+  undefined,
+  undefined
+>();
 
 const fetchUploadProfile = createAsyncAction(
   Actions.UploadProfile_IN_REQUEST,
@@ -103,7 +126,9 @@ export default {
   logout,
   fetchUploadProfile,
   getOne,
+  searchUser,
   getAllUser,
+  deleteResult,
   deleteNoti,
   fetchDelete,
   fetchUpdate,

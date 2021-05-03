@@ -16,13 +16,11 @@ const config = createReducer<ConfigState>(initialState, {
     };
   },
   [getType(configActions.sendPush.success)]: (state, { payload }) => {
-    console.log("reducer");
     return {
       ...state,
     };
   },
   [getType(configActions.sendPush.failure)]: (state, { payload }) => {
-    console.log("reducer failure");
     return {
       ...state,
     };

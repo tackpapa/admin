@@ -11,7 +11,7 @@ let add = ""
 if (process.env.NODE_ENV === "development") {
    add = "http://localhost:3001/admin";
 } else {
-    add = "http://byker.s3-website.ap-northeast-2.amazonaws.com/admin";
+    add = "http://bykerlogin.s3-website.ap-northeast-2.amazonaws.com/admin";
 }
 
 function loginWithKakao() {
@@ -55,10 +55,10 @@ const Home= ()=>{
       <div className="container">
 
           <div className="div-one">
-            <img id="cloud" src="https://byker.s3.ap-northeast-2.amazonaws.com/3525.svg" alt="alternative text" width="150" height="100" />
+            <img id="cloud" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3525.svg" alt="alternative text" width="150" height="100" />
           </div>
           <div className="div-two">
-            <img id="logo" src="https://byker.s3.ap-northeast-2.amazonaws.com/3526.svg" alt="alternative text" width="150" height="100" />
+            <img id="logo" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3526.svg" alt="alternative text" width="150" height="100" />
           </div>
           <div className="div-two">
               <a id="custom-login-btn" href="#">
@@ -66,7 +66,7 @@ const Home= ()=>{
             </a>
           </div>
           <div className="div-two">
-            <img id="city" src="https://byker.s3.ap-northeast-2.amazonaws.com/3524.svg" alt="alternative text" width="width" height="20%" />
+            <img id="city" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3524.svg" alt="alternative text" width="width" height="20%" />
           </div>
       </div>
                     

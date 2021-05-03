@@ -15,12 +15,22 @@ export enum Actions {
   FETCH_SIGN_UP_FAILURE = "FETCH_SIGN_UP#FAILURE",
   FETCH_SIGN_UP_CANCEL = "FETCH_SIGN_UP#CANCEL",
 
+  SEARCH_USER_REQUEST = "SEARCHUSER#REQUEST",
+  SEARCH_USER_SUCCESS = "SEARCHUSER#SUCCESS",
+  SEARCH_USER_FAILURE = "SEARCHUSER#FAILURE",
+  SEARCH_USER_CANCEL = "SEARCHUSER#CANCEL",
+
   SIGN_OUT = "SIGN_OUT",
   fetchSession = "FETCH_SESSION",
 
   DELETE_NOTI = "DELETE_NOTI",
   DELETE_NOTI_SUCCESS = "DELETE_NOTI_SUCCESS",
   DELETE_NOTI_FAILURE = "DELETE_NOTI_FAILURE",
+
+  DELETERESULT_REQUEST = "DELETERESULT#REQUEST",
+  DELETERESULT_SUCCESS = "DELETERESULT#SUCCESS",
+  DELETERESULT_FAILURE = "DELETERESULT#FAILURE",
+  DELETERESULT_CANCEL = "DELETERESULT#CANCEL",
 
   GETONE_IN_REQUEST = "GETONE_IN_REQUEST",
   GETONE_IN_SUCCESS = "GETONE_IN_SUCCESS",
@@ -72,6 +82,7 @@ export const initialState = {
   Noti: [],
   users: [],
   createdAt: "",
+  result: [],
 };
 
 export interface User {
@@ -88,6 +99,7 @@ export interface User {
   expotoken: string;
   Noti: string[];
   users: User[];
+  result: User[];
 }
 
 export interface SignInRequestPayload {
@@ -123,6 +135,9 @@ export interface UserProfileSuccessPayload {
   markets: Market[];
 }
 
+export type DeleteResultRequestPayload = void;
+export type DeleteResultSuccessPayload = void;
+
 export interface DeleteRequestPayload {
   _id: String;
 }
@@ -145,3 +160,7 @@ export type SignUpSuccessPayload = User;
 export type UpdateSuccessPayload = User;
 export type DeleteSuccessPayload = String;
 export type UploadProfileSuccessPayload = User;
+export type SearchUserRequestPayload = String;
+export interface SearchUserSuccessPayload {
+  data: User[];
+}
