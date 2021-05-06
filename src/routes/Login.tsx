@@ -11,7 +11,7 @@ let add = ""
 if (process.env.NODE_ENV === "development") {
    add = "http://localhost:3001/admin";
 } else {
-    add = "http://bykerlogin.s3-website.ap-northeast-2.amazonaws.com/admin";
+    add = "https://admin.byker.io/admin";
 }
 
 function loginWithKakao() {
