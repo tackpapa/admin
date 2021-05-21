@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 
 const {Kakao} = window as any
 let add = ""
-
+console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === "development") {
    add = "http://localhost:3001/admin";
 } else {
@@ -23,8 +23,6 @@ function loginWithKakao() {
     });
   
 }
-
-
 
 const Home= ()=>{
   const [code,setCode] = React.useState('');
