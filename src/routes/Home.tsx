@@ -59,7 +59,6 @@ const delbanner = (id:string)=>{
   }
   const handlepic = (e:any)=>{
     setPic(e.target.files[0])
-    
   }
   const handlecreate = ()=>{
     dispatch(banneractions.makeBanner.request(newBanner));   
