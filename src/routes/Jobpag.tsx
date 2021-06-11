@@ -14,13 +14,11 @@ const JobPage = ()=>{
   const posts = useSelector(postselector)
   const all = useSelector(allselector)
 
-
   useEffect(() => {
     if (!posts.length) {
         dispatch(jobsactions.getJobPage.request(1))
     }         
 }, [dispatch, posts])
-
 
 const delpost = (id:string)=>{
   dispatch(jobsactions.deleteJob.request({_id:id}));
