@@ -4,7 +4,12 @@ import { map, exhaustMap, catchError, filter, takeUntil } from "rxjs/operators";
 import { isActionOf } from "typesafe-actions";
 import { Epic } from "./types";
 
-axios.defaults.baseURL = "https://back.byker.io";
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === "development") {
+  axios.defaults.baseURL = "http://localhost:3000/admin";
+} else {
+  axios.defaults.baseURL = "https://back.byker.io";
+}
 
 export const request = axios;
 

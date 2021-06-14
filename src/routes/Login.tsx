@@ -9,7 +9,7 @@ const {Kakao} = window as any
 let add = ""
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === "development") {
-   add = "http://localhost:3001/admin";
+   add = "http://localhost:3000/admin";
 } else {
     add = "https://admin.byker.io/admin";
 }
@@ -43,6 +43,7 @@ const Home= ()=>{
 
   React.useEffect(() => {
     if (code) {
+      console.log(code, "fffffff")
         dispatch(useractions.fetchSignIn.request({ code, uri:add }));
         <Redirect to="/home" />
     }
