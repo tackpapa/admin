@@ -52,7 +52,7 @@ const Home= ()=>{
     return (
       <div className="container">
           <div className="div-one">
-            <img id="cloud" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3525.svg" alt="alternative text" width="150" height="100%" />
+            <img id="cloud" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3525.svg" alt="alternative text" width="20%" height="100%" />
           </div>
           <div className="div-two">
             <img id="logo" src="https://bykerlogin.s3.ap-northeast-2.amazonaws.com/3526.svg" alt="alternative text" width="150" height="100%" />
