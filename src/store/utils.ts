@@ -4,8 +4,6 @@ import { map, exhaustMap, catchError, filter, takeUntil } from "rxjs/operators";
 import { isActionOf } from "typesafe-actions";
 import { Epic } from "./types";
 
-// axios.defaults.baseURL = "http://localhost:3000";
-
 axios.defaults.baseURL = "https://back.byker.io";
 
 export const request = axios;

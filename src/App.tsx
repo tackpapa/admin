@@ -35,7 +35,6 @@ const Admin = () => {
 }
 
 function App(){
-
   return (
     <>
     <BrowserRouter>
