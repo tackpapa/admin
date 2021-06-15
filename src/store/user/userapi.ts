@@ -74,10 +74,10 @@ export const requestDelete = (payload: DeleteRequestPayload) =>
 
 export const requestUploadProfile = (payload: UploadProfileRequestPayload) => {
   var form_data = new FormData();
-  form_data.append("pic", ({
+  form_data.append("pic", {
     ...payload.pic,
     type: "image/jpeg",
-  } as unknown) as Blob);
+  } as unknown as Blob);
 
   return request
     .post("/user/uploadProfile", form_data)

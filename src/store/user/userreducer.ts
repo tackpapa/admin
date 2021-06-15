@@ -42,6 +42,7 @@ const user = createReducer<UserState>(initialState, {
 
   [getType(userActions.fetchSignIn.success)]: (state, { payload }) => {
     handleSignIn(payload.token, payload._id);
+
     return {
       ...state,
       ...payload,

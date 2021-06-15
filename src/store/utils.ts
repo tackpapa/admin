@@ -6,7 +6,7 @@ import { Epic } from "./types";
 
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === "development") {
-  axios.defaults.baseURL = "http://localhost:3000/admin";
+  axios.defaults.baseURL = "http://localhost/";
 } else {
   axios.defaults.baseURL = "https://back.byker.io";
 }

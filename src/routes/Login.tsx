@@ -43,7 +43,7 @@ const Home= ()=>{
 
   React.useEffect(() => {
     if (code) {
-      console.log(code, "fffffff")
+      console.log(code)
         dispatch(useractions.fetchSignIn.request({ code, uri:add }));
         <Redirect to="/home" />
     }
